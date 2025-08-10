@@ -1,6 +1,6 @@
 module TBD
 
-include("../utils/utils.jl")
+include("utils/utils.jl")
 include("algorithm1.jl")
 include("algorithm2.jl")
 

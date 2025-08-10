@@ -22,7 +22,7 @@ All source code and related files are organized inside the `TBD` folder, which h
 
 At the project root (one level above `TBD`), you’ll find:
 
-* `README.md` - overwiev of the project
+* `README.md` - overview of the project
 * `GUIDELINES.md` - this file
 * `CHANGELOG.md` - a detailed log of changes and updates for the project
 * `LICENSE` - license information
