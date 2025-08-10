@@ -18,5 +18,4 @@ jobs:
       run: julia --project=TBD -e 'using Pkg; Pkg.instantiate(); Pkg.precompile()'
 
     - name: Run tests
-      run: chmod +x TBD/utils/scripts/test.sh
-      run: ./TBD/utils/scripts/test.sh
+      run: chmod +x TBD/utils/scripts/test.sh && ./TBD/utils/scripts/test.sh
