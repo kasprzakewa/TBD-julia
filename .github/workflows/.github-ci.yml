@@ -1,6 +1,11 @@
-name: Julia CI
+name: TBD Julia CI/CD Workflow
 
-on: [push, pull_request]
+on: 
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
 
 jobs:
   test:
