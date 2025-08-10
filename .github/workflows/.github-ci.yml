@@ -12,15 +12,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: Setup Julia
-      uses: julia-actions/setup-julia@v1
-      with:
-        version: '1.11.6'
+      - name: Setup Julia
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.11.6'
 
-    - name: Install dependencies
-      run: julia --project=TBD -e 'using Pkg; Pkg.instantiate(); Pkg.precompile()'
+      - name: Cache Julia packages
+        uses: julia-actions/cache@v2
+        with:
+          path: ~/.julia/artifacts,~/.julia/packages
+          key: ${{ runner.os }}-julia-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-julia-
+            
+      - name: Build package
+        uses: julia-actions/julia-buildpkg@v1
+        with:
+          project: TBD
 
-    - name: Run tests
-      run: chmod +x TBD/utils/scripts/test.sh && ./TBD/utils/scripts/test.sh
+      - name: Run tests
+        uses: julia-actions/julia-runtest@v1
+        with:
+          project: TBD

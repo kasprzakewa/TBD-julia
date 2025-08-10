@@ -81,11 +81,11 @@ Pkg.test()
 1. Make the test script executable:
 
    ```bash
-   chmod +x TBD/utils/scripts/test.sh
+   chmod +x TBD/src/utils/scripts/test.sh
    ```
 
 2. Run the tests by executing:
 
    ```bash
-   ./TBD/utils/scripts/test.sh
+   ./TBD/src/utils/scripts/test.sh
    ```
