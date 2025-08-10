@@ -12,7 +12,7 @@ jobs:
     - name: Setup Julia
       uses: julia-actions/setup-julia@v1
       with:
-        version: '1.9'
+        version: '1.11.6'
 
     - name: Install dependencies
       run: julia --project=TBD -e 'using Pkg; Pkg.instantiate(); Pkg.precompile()'
